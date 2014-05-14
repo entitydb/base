@@ -35,4 +35,20 @@ describe("Base", function () {
     expect(Doge).to.exist;
     expect(Doge.prototype.wow).to.equal(true);
   });
+
+  it("should throw Base.Error", function () {
+    var fn = function () {
+      throw new Base.Error("error!");
+    };
+    expect(fn).to.throw(Base.Error);
+  });
+
+  it("should extend and throw ExtendedError", function () {
+    var ExtendedError = Base.Error.extend('ExtendedError');
+    var fn = function () {
+      throw new ExtendedError("error!");
+    };
+    expect(fn).to.throw(Base.Error);
+    expect(fn).to.throw(ExtendedError);
+  });
 });
