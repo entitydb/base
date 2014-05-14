@@ -1,0 +1,52 @@
+{
+  "name": "entitydb-base",
+  "version": "0.1.0",
+  "description": "a base for entitydb",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive test",
+    "coverage": "rm -rf coverage; istanbul cover _mocha -- --recursive --reporter spec --bail",
+    "publish-coverage": "cat coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/entitydb/base.git"
+  },
+  "keywords": [
+    "type",
+    "entity",
+    "entitydb",
+    "model",
+    "controller"
+  ],
+  "author": "entitydb",
+  "license": "AGPLv3",
+  "bugs": {
+    "url": "https://github.com/entitydb/base/issues"
+  },
+  "homepage": "https://github.com/entitydb/base",
+  "dependencies": {
+    "simple-extend": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2",
+    "testling": "^1.6.1",
+    "coveralls": "^2.10.0",
+    "istanbul": "^0.2.9"
+  },
+  "testling": {
+    "harness": "mocha",
+    "files": "test/**/*.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/25..latest",
+      "firefox/20.latest",
+      "opera/15..latest",
+      "safari/6..latest",
+      "iphone/6..latest",
+      "ipad/6..latest",
+      "android-browser/4.2..latest"
+    ]
+  }
+}
